@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content-container">
+    {% if all_question_patterns|length > 0 %}
+
+    {% for pattern in all_question_patterns %}
+
+
+
+            <div class="card">
+                <div class="card-header" id="heading{{ pattern.id }}">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#pattern{{ pattern.id }}" aria-expanded="false" aria-controls="pattern{{ pattern.id }}">
+                            {{ pattern.text }}
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="pattern{{ pattern.id }}" class="collapse" aria-labelledby="heading{{ pattern.id }}" data-parent="#content-container">
+
+                    {% for question in all_questions %}
+
+                        {% if question.pattern.id == pattern.id %}
+                        <div class="card-body">
+                            <div class="row table-header">
+                                <div class="col">Text</div>
+                                <div class="col">Year</div>
+                                <div class="col">A</div>
+                                <div class="col">B</div>
+                                <div class="col">C</div>
+                                <div class="col">D</div>
+                                <div class="col">Correct</div>
+                                <div class="col">Difficulty</div>
+                            </div>
+
+                            <div class="row question-rows">
+                                <div class="col">{{ question.text }} </div>
+                                <div class="col">{{ question.year }} </div>
+                                <div class="col">{{ question.answerA }} </div>
+                                <div class="col">{{ question.answerB }} </div>
+                                <div class="col">{{ question.answerC }} </div>
+                                <div class="col">{{ question.answerD }} </div>
+                                <div class="col">{{ question.correctAnswer }} </div>
+                                <div class="col">{{ question.difficulty }} </div>
+                            </div>
+                        </div>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+
+    {% endfor %}
+
+    {% endif %}
+
+    </div>
+
+{% endblock %}

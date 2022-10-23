@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+    <div class="">
+        <div class="element-header col-12">
+            <div class="element-header-title">
+                <i class="bi bi-tags-fill element-header-icon-small"></i> <span>Question patterns</span>
+                <a href="{{ app.request.uri }}/add-question-pattern"><button class="element-header-add-button btn btn-primary"> Add </button></a>
+            </div>
+        </div>
+
+        {% if all_patterns|length > 0 %}
+
+            <div class="element-table-header row">
+                <div class="col">Text</div>
+                <div class="col">Category</div>
+                <div class="col">URL</div>
+                <div class="col">Code</div>
+{#                <div class="col">A</div>#}
+{#                <div class="col">B</div>#}
+{#                <div class="col">C</div>#}
+{#                <div class="col">D</div>#}
+            </div>
+
+            {% for pattern in all_patterns %}
+
+                <div class="row element-row">
+                    <div class="col">
+                        {{ pattern.text }}
+                    </div>
+                    <div class="col">
+                        {{ pattern.category.name }}
+                    </div>
+                    <div class="col" style="overflow-wrap: anywhere;">
+                        {{ pattern.url }}
+                    </div>
+                    <div class="col">
+                        {{ pattern.code }}
+                        <a href="{{ app.request.uri }}/edit-question-pattern/{{ pattern.id }}"><button class="btn btn-warning"> Edit </button></a>
+                    </div>
+{#                    <div class="col">#}
+{#                        {{ pattern.firstRecordSelector }}#}
+{#                    </div>#}
+{#                    <div class="col">#}
+{#                        {{ pattern.secondRecordSelector }}#}
+{#                    </div>#}
+{#                    <div class="col">#}
+{#                        {{ pattern.thirdRecordSelector }}#}
+{#                    </div>#}
+{#                    <div class="col">#}
+{#                        {{ pattern.fourthRecordSelector }}#}
+{#                        <a href="{{ app.request.uri }}/edit-question-pattern/{{ pattern.id }}"><button class="btn btn-warning"> Edit </button></a>#}
+{#                    </div>#}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+    <div class="row justify-content-center pm_header">
+        <div class="col-lg-3">
+            <img class="icon-logo" src="https://tmsi.akamaized.net/head/transfermarkt_logo.svg" height="62" width="156" title="Transfermarkt" alt="Transfermarkt">
+        </div>
+        <div class="col-lg-6">
+            <div class="tm-header__input-wrapper " id="schnellsuche-platz">
+                <form name="schnellsuche" id="schnellsuche" class="tm-header__form" action="/schnellsuche/ergebnis/schnellsuche">
+                    <input type="text" name="query" class="tm-header__input--search-field" placeholder="Enter search term" autocorrect="off" spellcheck="false" value="">
+                    <button class="tm-header__input--search-send" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="menu-ul row">
+            <li class="col-6 menu-l"><a href="/question-database">Question database</a></li>
+            <li class="col-6 menu-l"><a href="/element-database">Element database</a></li>
+        </ul>
+    </nav>
+
+{% endblock %}

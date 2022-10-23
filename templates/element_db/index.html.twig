@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+    <div>
+        <div class="element-header">
+            <div class="element-header-title">
+                <i class="bi bi-trophy element-header-icon-small"></i> <span>Competitions</span>
+                <a href="{{ app.request.uri }}/add-competition"><button class="element-header-add-button btn btn-primary"> Add </button></a>
+            </div>
+        </div>
+
+        {% if all_competitions|length > 0 %}
+
+            <div class="element-table-header row">
+                <div class="col">Code</div>
+                <div class="col">Name</div>
+                <div class="col">Reputation</div>
+                <div class="col">Logo</div>
+            </div>
+
+            {% for competition in all_competitions %}
+
+                <div class="row element-row">
+                        <div class="col">
+                            {{ competition.code }}
+                        </div>
+                        <div class="col">
+                            {{ competition.name }}
+                        </div>
+                        <div class="col">
+                            {{ competition.reputation }}
+                        </div>
+                        <div class="col">
+                            <img src="{{ competition.logo }}" alt="logo">
+                            <a href="{{ app.request.uri }}/edit-competition/{{ competition.id }}"><button class="btn btn-warning"> Edit </button></a>
+                        </div>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+
+
+
+{% endblock %}

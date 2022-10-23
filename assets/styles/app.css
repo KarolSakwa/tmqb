@@ -1,0 +1,152 @@
+:root {
+    --maingray: #9f9797;
+    --element-bckg: #dee2e6;
+}
+
+body {
+    background-color: lightgray !important;
+}
+
+h1 {
+    color: blue;
+}
+
+#main {
+    margin: 0 auto;
+    max-width: 1034px;
+    position: relative;
+    background-color: #e9e9e9;
+}
+
+ul.menu-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2f3e46;
+}
+
+li.menu-l {
+    float: left;
+}
+
+li.menu-l a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+li.menu-l a:hover {
+    background-color: #233138;
+    color: white;
+}
+
+.tm-header__input-wrapper {
+    display: flex;
+}
+
+.tm-header__input-wrapper .tm-header__form {
+    position: relative;
+    width: 100%;
+}
+
+.tm-header__input-wrapper .tm-header__form .tm-header__input--search-field {
+    border: 1px solid var(--tm-grey, #ddd);
+    font-family: var(--tm-quaternary-font, 'OSL', 'OSL-fallback', sans-serif);
+    font-size: 1.3rem;
+    height: 60px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.tm-header__input-wrapper .tm-header__form .tm-header__input--search-send {
+    background-repeat: no-repeat;
+    border: none;
+    bottom: 16px;
+    height: 33px;
+    position: absolute;
+    right: 16px;
+    width: 32px;
+    background-color: white;
+}
+
+.main-big-icon {
+    font-size: 72px;
+    margin: 0 auto;
+}
+
+.main-big-button {
+    width: 100%;
+    border: 1px dotted #bac0c6;
+}
+
+.main-big-button:hover {
+    background-color: #E9E9E9;
+}
+
+.element-header-icon-small {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.element-header {
+    height: 50px;
+    text-align: center;
+    background-color: white;
+}
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.element-header-add-button {
+    float: right;
+    margin: 5px 0;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-container input {
+    width: 70%;
+    display: block;
+    margin: 10px auto;
+    background-color: #f3f3f3;
+}
+
+.content-container {
+    padding: 30px;
+}
+
+.content-container h5 {
+    text-align: center;
+}
+
+.content-container .return-button {
+    float: right;
+}
+
+.element-header-title {
+}
+
+.element-row {
+    border-top: 1px solid var(--maingray);
+    padding: 10px;
+    background-color: var(--element-bckg);
+}
+
+.element-row:last-child {
+    border-bottom: 1px solid var(--maingray);
+}
+
+.element-row a {
+    float: right;
+}
+
+.element-row img {
+    height: 50px;
+}

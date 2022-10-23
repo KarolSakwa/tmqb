@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+    <div>
+        <div class="element-header">
+            <div class="element-header-title">
+                <i class="bi bi-tags-fill element-header-icon-small"></i> <span>Question categories</span>
+                <a href="{{ app.request.uri }}/add-question-category"><button class="element-header-add-button btn btn-primary"> Add </button></a>
+            </div>
+        </div>
+
+        {% if all_categories|length > 0 %}
+
+            <div class="element-table-header row">
+                <div class="col">Code</div>
+                <div class="col">Name</div>
+            </div>
+
+            {% for category in all_categories %}
+
+                <div class="row element-row">
+                    <div class="col">
+                        {{ category.code }}
+                    </div>
+                    <div class="col">
+                        {{ category.name }}
+                        <a href="{{ app.request.uri }}/edit-question-category/{{ category.id }}"><button class="btn btn-warning"> Edit </button></a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+
+
+
+{% endblock %}

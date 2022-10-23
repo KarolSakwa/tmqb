@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-4">
+        <a href="{{ app.request.uri }}/questions">
+            <button class="main-big-button">
+                <i class="main-big-icon bi bi-question-circle-fill"></i>
+                <p>Questions</p>
+            </button>
+        </a>
+    </div>
+    <div class="col-4">
+        <a href="{{ app.request.uri }}/question-patterns">
+            <button class="main-big-button">
+                <i class="main-big-icon bi bi-card-list"></i>
+                <p>Question patterns</p>
+            </button>
+        </a>
+    </div>
+    <div class="col-4">
+        <a href="{{ app.request.uri }}/question-categories">
+            <button class="main-big-button">
+                <i class="main-big-icon bi bi-tags-fill"></i>
+                <p>Question categories</p>
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
